@@ -44,7 +44,7 @@ class Calendar:
         self.service = build('calendar', 'v3', credentials=creds)
 
     # def textMessage(bot, update):
-    #     response = 'Получил Ваше сообщение: ' + update.message.text
+    #     response = update.message.text
     #     bot.send_message(chat_id=update.message.chat_id, text=response)
 
     def AddMessage(self, bot, update):
@@ -107,7 +107,6 @@ class Calendar:
                          pic=resp)
 
 if __name__ == "__main__":
-    # Хендлеры
     c = Calendar()
     start_command_handler = CommandHandler('start', c.startCommand)
     # text_message_handler = MessageHandler(Filters.text, textMessage)
@@ -117,7 +116,6 @@ if __name__ == "__main__":
     change_message_handler = CommandHandler('change', c.ChangeMessage)
     check_daily_message_handler = CommandHandler('check_daily', c.CheckDailyMessage)
     check_weekly_message_handler = CommandHandler('check_next_events', c.CheckNextEventsMessage)
-    # Добавляем хендлеры в диспетчер
     dispatcher.add_handler(start_command_handler)
     # dispatcher.add_handler(text_message_handler)
     dispatcher.add_handler(geo_message_handler)
@@ -126,7 +124,5 @@ if __name__ == "__main__":
     dispatcher.add_handler(change_message_handler)
     dispatcher.add_handler(check_daily_message_handler)
     dispatcher.add_handler(check_weekly_message_handler)
-    # Начинаем поиск обновлений
     updater.start_polling(clean=True)
-    # Останавливаем бота, если были нажаты Ctrl + C
     updater.idle()
