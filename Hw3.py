@@ -9,7 +9,7 @@ import os.path
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
-updater = Updater(token='1134927516:AAE3Bi5dGXbaZWeO_IXIWZjtwMTpzsn6r64') # Токен API к Telegram
+updater = Updater(token='...') # Токен API к Telegram
 dispatcher = updater.dispatcher
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
