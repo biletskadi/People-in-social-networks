@@ -9,3 +9,5 @@ When user is entering he gives us his Google Calendar ID (his email address) and
 
 ### Modules
 We have three modules. One with Calendar ADT which is working with Calendar API and events in Calendar. Second one with Geolocation ADT which is working with Google Maps API. Third module is combining all work together and makes everything work.
+### Using
+Instraction on using bot you can xee here https://youtu.be/Qeh_UVv4NrM
