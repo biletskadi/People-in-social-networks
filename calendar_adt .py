@@ -1,7 +1,7 @@
 from __future__ import print_function
 
 from typing import List, Any, Tuple
-
+from datetime import datetime
 import json
 import datetime
 import pickle
@@ -112,7 +112,7 @@ class Calendar:
         now = datetime.datetime.utcnow().isoformat() + 'Z' 
         bot.send_message(chat_id=update.message.chat_id, text='Події на сьогодні')
         events_result = self.service.events().list(calendarId='primary', timeMin=now, singleEvents=True,
-                                                   orderBy='startTime', datetime = update.message.text).execute()
+                                                   orderBy='startTime', datetime = datetime.today().strftime('%Y-%m-%d')).execute()
         events = events_result.get('items', [])
         events_lst = []
         if not events:
@@ -135,7 +135,7 @@ class Calendar:
         # Call the Calendar API
         now = datetime.datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTC time
         events_result = self.service.events().list(calendarId='primary', timeMin=now,
-                                                   maxResults=int(update.message.text), singleEvents=True,
+                                                   maxResults=10), singleEvents=True,
                                                    orderBy='startTime').execute()
         events = events_result.get('items', [])
         events_lst = []
