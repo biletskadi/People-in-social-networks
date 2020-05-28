@@ -1,7 +1,7 @@
 from calendar_adt import Calendar
 from geolocation import Geolocation
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-update = Updater(token='1134927516:AAE3Bi5dGXbaZWeO_IXIWZjtwMTpzsn6r64')
+update = Updater(token='1134...6r64')
 dispatcher = update.dispatcher
 
 if __name__ == '__main__':
